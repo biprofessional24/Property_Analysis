@@ -1,0 +1,1194 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/6/2024 12:01:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-69E4SO8"
+  DTS:CreatorName="DESKTOP-69E4SO8\Sony"
+  DTS:DTSID="{B6E4E54C-6258-41ED-A2D4-6D38B14BBEA2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{115932AE-4B6C-4A71-AD3F-42AC74811DF9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AUS_PostCodeSuburb.xlsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{17F1956F-EC7E-46CC-936D-3750290AFFB6}"
+      DTS:ObjectName="AUS_PostCodeSuburb.xlsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\SQL Notes\Industry Connect\Property analysis Project\AUS_PostCodeSuburb.xlsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-69E4SO8.2024-APR-IC-DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{26CBF99D-6547-4601-9D5A-27B1FBA8772A}"
+      DTS:ObjectName="DESKTOP-69E4SO8.2024-APR-IC-DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-69E4SO8;Initial Catalog=2024-APR-IC-DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{26CBF99D-6547-4601-9D5A-27B1FBA8772A}DESKTOP-69E4SO8.2024-APR-IC-DW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{FDE4E5E9-B048-43C5-B2CE-CDBEBCF98921}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\SQL Notes\Industry Connect\Property analysis Project\AUS_PostCodeSuburb.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{EFA631B1-C16F-4D08-A2AB-5A136940ED3F}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\SQL Notes\Industry Connect\Property analysis Project\NSW_PropertyMedianValue.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{D20203A6-4E4C-479F-976A-7EAA1C00ADD7}"
+      DTS:ObjectName="Excel Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\SQL Notes\Industry Connect\Property analysis Project\AUS_PostCodeSuburb.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{54AD2D5B-3EC5-49EB-B761-D14B237A4FA7}"
+      DTS:ObjectName="Excel Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\SQL Notes\Industry Connect\Property analysis Project\AUS_PostCodeSuburb.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Excel File 2"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{89A69BF5-AB74-43E2-9774-26ED328C343A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Excel File 2">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Import Excel File 2\NSW_Property_Data_Loading"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{979FB608-0149-47CD-A814-7F5AA0EA1AB3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="NSW_Property_Data_Loading"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">NSW_PropertyMedainValue#csv$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[State]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[State]"
+                          name="State"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[City/Town]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[City/Town]"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[City/Town]"
+                          name="City/Town"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Suburb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Suburb]"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Suburb]"
+                          name="Suburb"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Postcode]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Postcode]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Postcode]"
+                          name="Postcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[District]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[District]"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[District]"
+                          name="District"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Location]"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Location]"
+                          name="Location"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Property_Median_Value]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]"
+                          name="Property_Median_Value"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="255"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[City/Town]"
+                          dataType="wstr"
+                          length="255"
+                          name="City/Town" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Suburb]"
+                          dataType="wstr"
+                          length="255"
+                          name="Suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Postcode]"
+                          dataType="r8"
+                          name="Postcode" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[District]"
+                          dataType="wstr"
+                          length="255"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="255"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Property_Median_Value]"
+                          dataType="cy"
+                          name="Property_Median_Value" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
+                          name="State" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[City/Town]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[City/Town]"
+                          name="City/Town" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Suburb]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Suburb]"
+                          name="Suburb" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Postcode]"
+                          dataType="r8"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Postcode]"
+                          name="Postcode" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[District]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[District]"
+                          name="District" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Location]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Location]"
+                          name="Location" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Property_Median_Value]"
+                          dataType="cy"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Property_Median_Value]"
+                          name="Property_Median_Value" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[NSW_Property]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-69E4SO8.2024-APR-IC-DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-69E4SO8.2024-APR-IC-DW]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[City/Town]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="City/Town"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City/Town]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[City/Town]" />
+                        <inputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Suburb"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Suburb]" />
+                        <inputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Postcode]"
+                          cachedDataType="r8"
+                          cachedName="Postcode"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Postcode]" />
+                        <inputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[District]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="District"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[District]" />
+                        <inputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Location]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Location"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Location]" />
+                        <inputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Property_Median_Value]"
+                          cachedDataType="cy"
+                          cachedName="Property_Median_Value"
+                          externalMetadataColumnId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Property_Median_Value]"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="255"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City/Town]"
+                          dataType="wstr"
+                          length="255"
+                          name="City/Town" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          dataType="wstr"
+                          length="255"
+                          name="Suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
+                          dataType="wstr"
+                          length="255"
+                          name="Postcode" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          dataType="wstr"
+                          length="255"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="255"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Property_Median_Value]"
+                          dataType="cy"
+                          name="Property_Median_Value" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Import Excel File 2\NSW_Property_Data_Loading.Paths[Excel Source Output]"
+                  endId="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Excel Source Output"
+                  startId="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Excel file-1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{AAF36B1A-725E-472C-93D4-B9C6BEC4C872}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Excel file-1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Import Excel file-1\AUS_Properties_Data_Loading"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E18F575C-5613-4E8C-BCE2-4D3F48F8B45C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="AUS_Properties_Data_Loading"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">'AUS_Post_suburb v2$'</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 3]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 3]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[postcode]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[postcode]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[postcode]"
+                          name="postcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[suburb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[suburb]"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[suburb]"
+                          name="suburb"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[city]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[city]"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[city]"
+                          name="city"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[state]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[state]"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[state]"
+                          name="state"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[state_code]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[state_code]"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[state_code]"
+                          name="state_code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[lat]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[lat]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[lat]"
+                          name="lat"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[lon]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[lon]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[lon]"
+                          name="lon"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[district]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distric]"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[district]"
+                          name="district"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[postcode]"
+                          dataType="r8"
+                          name="postcode" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[suburb]"
+                          dataType="wstr"
+                          length="255"
+                          name="suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[city]"
+                          dataType="wstr"
+                          length="255"
+                          name="city" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[state]"
+                          dataType="wstr"
+                          length="255"
+                          name="state" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[state_code]"
+                          dataType="wstr"
+                          length="255"
+                          name="state_code" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[lat]"
+                          dataType="r8"
+                          name="lat" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[lon]"
+                          dataType="r8"
+                          name="lon" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distric]"
+                          dataType="wstr"
+                          length="255"
+                          name="Distric" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[postcode]"
+                          dataType="r8"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[postcode]"
+                          name="postcode" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[suburb]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[suburb]"
+                          name="suburb" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[city]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[city]"
+                          name="city" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[state]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[state]"
+                          name="state" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[state_code]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[state_code]"
+                          name="state_code" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[lat]"
+                          dataType="r8"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[lat]"
+                          name="lat" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[lon]"
+                          dataType="r8"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[lon]"
+                          name="lon" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Distric]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[Distric]"
+                          name="Distric" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[AUS_Property]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-69E4SO8.2024-APR-IC-DW]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-69E4SO8.2024-APR-IC-DW]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[postcode]"
+                          cachedDataType="r8"
+                          cachedName="postcode"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[postcode]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[postcode]" />
+                        <inputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="suburb"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[suburb]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[suburb]" />
+                        <inputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[city]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="city"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[city]" />
+                        <inputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[state]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="state"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[state]" />
+                        <inputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[state_code]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="state_code"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state_code]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[state_code]" />
+                        <inputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lat]"
+                          cachedDataType="r8"
+                          cachedName="lat"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[lat]" />
+                        <inputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lon]"
+                          cachedDataType="r8"
+                          cachedName="lon"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lon]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[lon]" />
+                        <inputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[district]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="district"
+                          externalMetadataColumnId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output].Columns[district]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[postcode]"
+                          dataType="r8"
+                          name="postcode" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[suburb]"
+                          dataType="wstr"
+                          length="255"
+                          name="suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                          dataType="wstr"
+                          length="255"
+                          name="city" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                          dataType="wstr"
+                          length="255"
+                          name="state" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state_code]"
+                          dataType="wstr"
+                          length="255"
+                          name="state_code" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                          dataType="r8"
+                          name="lat" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lon]"
+                          dataType="r8"
+                          name="lon" />
+                        <externalMetadataColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[district]"
+                          dataType="wstr"
+                          length="255"
+                          name="district" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Import Excel file-1\AUS_Properties_Data_Loading.Paths[Excel Source Output]"
+                  endId="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Excel Source Output"
+                  startId="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Import Excel File 2\NSW_Property_Data_Loading"
+          TopLeft="29,29" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="252,126"
+          Size="252,169"
+          Id="Package\Import Excel File 2"
+          TopLeft="508,102" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Import Excel file-1\AUS_Properties_Data_Loading"
+          TopLeft="18.5,38" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="260,115"
+          Size="260,158"
+          Id="Package\Import Excel file-1"
+          TopLeft="173,102" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Excel file-1\AUS_Properties_Data_Loading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination"
+          TopLeft="191,185" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source"
+          TopLeft="194,81" />
+        <EdgeLayout
+          Id="Package\Import Excel file-1\AUS_Properties_Data_Loading.Paths[Excel Source Output]"
+          TopLeft="263.5,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,62"
+              Start="0,0"
+              End="13,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27"
+                    Point2="0,31"
+                    Point3="4,31" />
+                  <mssgle:LineSegment
+                    End="9,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,31"
+                    Point2="13,31"
+                    Point3="13,35" />
+                  <mssgle:LineSegment
+                    End="13,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel file-1\AUS_Properties_Data_Loading\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel file-1\AUS_Properties_Data_Loading\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import Excel File 2\NSW_Property_Data_Loading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source"
+          TopLeft="229,61" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination"
+          TopLeft="223,174" />
+        <EdgeLayout
+          Id="Package\Import Excel File 2\NSW_Property_Data_Loading.Paths[Excel Source Output]"
+          TopLeft="298.5,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,71"
+              Start="0,0"
+              End="10,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="4,35.5" />
+                  <mssgle:LineSegment
+                    End="6,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,35.5"
+                    Point2="10,35.5"
+                    Point3="10,39.5" />
+                  <mssgle:LineSegment
+                    End="10,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel File 2\NSW_Property_Data_Loading\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel File 2\NSW_Property_Data_Loading\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
